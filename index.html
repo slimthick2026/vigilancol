@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="VigilanCOL — Transparencia y anticorrupción Colombia 2026">
+<title>VigilanCOL 3.0 — Anticorrupción Colombia 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07090f;--s1:#0d1117;--s2:#161b22;--s3:#1c2430;--bd:#21262d;--bd2:#30363d;--cy:#00d4ff;--re:#ff4444;--ye:#ffc300;--gr:#3fb950;--or:#f0883e;--pu:#d2a8ff;--tx:#e6edf3;--mu:#7d8590;--mu2:#484f58}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(var(--bd) 1px,transparent 1px),linear-gradient(90deg,var(--bd) 1px,transparent 1px);background-size:60px 60px;opacity:.18;pointer-events:none;z-index:0}
+.wrap{max-width:1380px;margin:0 auto;padding:0 16px;position:relative;z-index:1}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:500;background:rgba(7,9,15,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd)}
+.hdr{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;max-width:1380px;margin:0 auto;gap:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:11px;cursor:pointer}
+.brand-icon{width:40px;height:40px;background:linear-gradient(135deg,#ff4444,#ff8800);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.brand h1{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;color:var(--cy);line-height:1}
+.brand sub{display:block;font-size:.55rem;color:var(--mu);letter-spacing:2.5px;text-transform:uppercase}
+.hdr-right{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.cd-box{background:linear-gradient(135deg,rgba(255,195,0,.12),rgba(255,68,68,.07));border:1px solid rgba(255,195,0,.25);border-radius:9px;padding:6px 12px;font-size:.67rem;text-align:center;cursor:pointer;transition:border-color .2s;white-space:nowrap}
+.cd-box:hover{border-color:rgba(255,195,0,.5)}
+.cd-box strong{color:var(--ye);font-size:.95rem;display:block;line-height:1.1}
+.live-pill{display:flex;align-items:center;gap:5px;padding:5px 10px;background:rgba(63,185,80,.1);border:1px solid rgba(63,185,80,.25);border-radius:20px;font-size:.65rem;color:var(--gr);white-space:nowrap}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--gr);animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* NAV */
+.nav-bar{background:var(--s1);border-bottom:1px solid var(--bd);overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--bd2) transparent}
+.nav-bar::-webkit-scrollbar{height:2px}
+.nav-bar::-webkit-scrollbar-thumb{background:var(--bd2)}
+.nav-inner{display:inline-flex;padding:0 16px;min-width:100%}
+.tb{padding:12px 15px;background:transparent;border:none;border-bottom:3px solid transparent;color:var(--mu);cursor:pointer;font-family:'Outfit',sans-serif;font-size:.76rem;font-weight:500;transition:all .2s;white-space:nowrap}
+.tb:hover{color:var(--tx)}
+.tb.active{color:var(--cy);border-bottom-color:var(--cy)}
+.tc{display:none;padding:22px 0 48px;animation:fadeIn .25s ease}
+.tc.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* STATS GRID */
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:11px;margin-bottom:22px}
+.sc{background:var(--s1);border:1px solid var(--bd);border-radius:11px;padding:15px 17px;position:relative;overflow:hidden;transition:border-color .3s,transform .2s;cursor:default}
+.sc:hover{border-color:var(--bd2);transform:translateY(-2px)}
+.sc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--c,var(--cy))}
+.sc-lbl{font-size:.6rem;color:var(--mu);text-transform:uppercase;letter-spacing:2px;margin-bottom:5px}
+.sc-val{font-family:'Bebas Neue',sans-serif;font-size:2.1rem;color:var(--c,var(--cy));line-height:1;margin-bottom:2px}
+.sc-sub{font-size:.65rem;color:var(--mu);line-height:1.4}
+
+/* SECTION HEADER */
+.sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px;flex-wrap:wrap;gap:8px}
+.st{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:1px;display:flex;align-items:center;gap:9px}
+.st::before{content:'';width:4px;height:22px;background:var(--cy);border-radius:2px;display:block}
+
+/* BADGES */
+.badge{padding:3px 9px;border-radius:20px;font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.8px;white-space:nowrap}
+.b-red{background:rgba(255,68,68,.15);color:var(--re);border:1px solid rgba(255,68,68,.3)}
+.b-ye{background:rgba(255,195,0,.15);color:var(--ye);border:1px solid rgba(255,195,0,.3)}
+.b-gr{background:rgba(63,185,80,.15);color:var(--gr);border:1px solid rgba(63,185,80,.3)}
+.b-cy{background:rgba(0,212,255,.12);color:var(--cy);border:1px solid rgba(0,212,255,.25)}
+.b-or{background:rgba(240,136,62,.15);color:var(--or);border:1px solid rgba(240,136,62,.3)}
+.b-pu{background:rgba(210,168,255,.12);color:var(--pu);border:1px solid rgba(210,168,255,.25)}
+
+/* ALERT LIST */
+.al-list{display:flex;flex-direction:column;gap:9px;margin-bottom:22px}
+.al{background:var(--s1);border:1px solid var(--bd);border-left:4px solid var(--ac,var(--re));border-radius:0 10px 10px 0;padding:13px 15px;display:grid;grid-template-columns:32px 1fr auto;gap:11px;align-items:start;cursor:pointer;transition:all .2s}
+.al:hover{background:var(--s2);transform:translateX(4px)}
+.al-ico{width:32px;height:32px;background:color-mix(in srgb,var(--ac,var(--re)) 12%,transparent);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:2px}
+.al-t{font-weight:700;font-size:.81rem;margin-bottom:3px}
+.al-b{font-size:.7rem;color:var(--mu);line-height:1.6}
+.al-m{font-size:.62rem;color:var(--mu);margin-top:4px;display:flex;gap:8px;flex-wrap:wrap}
+.al-m a{color:var(--cy);text-decoration:none}.al-m a:hover{text-decoration:underline}
+
+/* TABLE */
+.tw{background:var(--s1);border:1px solid var(--bd);border-radius:11px;overflow-x:auto;margin-bottom:18px}
+.dt{width:100%;border-collapse:collapse;font-size:.72rem;min-width:580px}
+.dt th{padding:10px 13px;background:var(--s2);color:var(--mu);font-size:.6rem;text-transform:uppercase;letter-spacing:2px;text-align:left;font-weight:500;border-bottom:1px solid var(--bd);white-space:nowrap}
+.dt td{padding:11px 13px;border-bottom:1px solid var(--bd);vertical-align:top;line-height:1.5}
+.dt tr:last-child td{border-bottom:none}
+.dt tr:hover td{background:rgba(255,255,255,.02)}
+.nm{font-weight:700;color:var(--tx)}.pt{font-size:.64rem;color:var(--mu)}
+.sl{color:var(--cy);text-decoration:none;font-size:.62rem;display:inline-flex;align-items:center;gap:3px}
+.sl:hover{text-decoration:underline}
+.risk{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:4px;font-size:.6rem;font-weight:700;text-transform:uppercase;white-space:nowrap}
+.r-c{background:rgba(255,68,68,.18);color:#ff6b6b;border:1px solid rgba(255,68,68,.35)}
+.r-a{background:rgba(240,136,62,.18);color:var(--or);border:1px solid rgba(240,136,62,.35)}
+.r-m{background:rgba(255,195,0,.18);color:var(--ye);border:1px solid rgba(255,195,0,.35)}
+.r-b{background:rgba(63,185,80,.18);color:var(--gr);border:1px solid rgba(63,185,80,.35)}
+
+/* CARDS */
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:13px;margin-bottom:22px}
+.ic{background:var(--s1);border:1px solid var(--bd);border-radius:11px;padding:17px;transition:border-color .2s}
+.ic:hover{border-color:var(--bd2)}
+.ic h3{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:1px;margin-bottom:9px;color:var(--c,var(--cy))}
+.ic p{font-size:.74rem;color:var(--mu);line-height:1.7;margin-bottom:7px}
+.ic ul{font-size:.72rem;color:var(--mu);line-height:2.1;padding-left:0;list-style:none}
+.ic li{padding-left:14px;position:relative}.ic li::before{content:'→';color:var(--c,var(--cy));position:absolute;left:0}
+.ic a{color:var(--c,var(--cy))}
+
+/* INPUTS */
+.sb{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.inp{flex:1;min-width:140px;background:var(--s1);border:1px solid var(--bd);border-radius:8px;padding:9px 12px;color:var(--tx);font-family:'Outfit',sans-serif;font-size:.78rem;outline:none;transition:border-color .2s}
+.inp:focus{border-color:var(--cy)}.inp::placeholder{color:var(--mu)}
+select.inp{cursor:pointer}select.inp option{background:var(--s2)}
+.btn{padding:9px 15px;border-radius:8px;border:1px solid var(--cy);background:transparent;color:var(--cy);font-family:'Outfit',sans-serif;font-size:.76rem;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn:hover{background:var(--cy);color:var(--bg)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn-p{background:var(--cy);color:var(--bg)}.btn-p:hover{opacity:.85}
+.btn-r{border-color:var(--re);color:var(--re)}.btn-r:hover{background:var(--re);color:#fff}
+.btn-g{border-color:var(--gr);color:var(--gr)}.btn-g:hover{background:var(--gr);color:var(--bg)}
+
+/* DISCLAIMER */
+.disc{background:rgba(255,195,0,.04);border:1px solid rgba(255,195,0,.16);border-radius:9px;padding:11px 15px;font-size:.71rem;color:var(--mu);line-height:1.7;margin-bottom:18px}
+.disc strong{color:var(--ye)}.disc a{color:var(--cy)}
+
+/* MODAL */
+.mbg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);z-index:1000;align-items:center;justify-content:center;padding:16px}
+.mbg.open{display:flex}
+.modal{background:var(--s1);border:1px solid var(--bd2);border-radius:15px;padding:26px;max-width:640px;width:100%;max-height:88vh;overflow-y:auto;position:relative}
+.mx{position:absolute;top:13px;right:13px;background:none;border:none;color:var(--mu);font-size:1.1rem;cursor:pointer;padding:4px}.mx:hover{color:var(--tx)}
+.dg{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:15px}
+.di label{display:block;font-size:.59rem;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:1px}
+.di .dv{font-size:.78rem;color:var(--tx);line-height:1.5}
+.src-box{background:var(--s2);border-radius:8px;padding:12px;margin-top:11px}
+.src-box h4{font-size:.62rem;color:var(--mu);text-transform:uppercase;letter-spacing:2px;margin-bottom:7px}
+.src-item{display:flex;align-items:flex-start;gap:7px;font-size:.7rem;margin-bottom:6px;line-height:1.5}
+.src-n{background:var(--cy);color:var(--bg);width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.56rem;font-weight:700;flex-shrink:0;margin-top:1px}
+
+/* MAPA */
+.mapa-layout{display:grid;grid-template-columns:1fr 300px;gap:18px;margin-bottom:22px}
+@media(max-width:800px){.mapa-layout{grid-template-columns:1fr}}
+.mapa-box{background:var(--s1);border:1px solid var(--bd);border-radius:11px;padding:18px}
+.dpto-g{cursor:pointer;transition:opacity .2s}.dpto-g:hover rect,.dpto-g:hover polygon{opacity:.8}
+.dpto-g rect,.dpto-g polygon{transition:fill .25s}
+.dpto-g.sel rect,.dpto-g.sel polygon{stroke:var(--cy)!important;stroke-width:2}
+.map-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px}
+.ml{display:flex;align-items:center;gap:6px;font-size:.68rem;color:var(--mu)}
+.ml-dot{width:11px;height:11px;border-radius:3px;flex-shrink:0}
+.mapa-panel{background:var(--s1);border:1px solid var(--bd);border-radius:11px;padding:16px;display:flex;flex-direction:column;gap:0}
+.mapa-panel h3{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:1px;color:var(--cy);margin-bottom:11px}
+.dpto-rank{display:flex;flex-direction:column;gap:5px;max-height:400px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--bd2) transparent}
+.dr-item{display:flex;align-items:center;justify-content:space-between;padding:7px 9px;background:var(--s2);border:1px solid var(--bd);border-radius:7px;cursor:pointer;font-size:.72rem;transition:all .2s}
+.dr-item:hover,.dr-item.active{border-color:var(--cy);background:rgba(0,212,255,.04)}
+
+/* PRESIDENCIALES */
+.pres-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:13px;margin-bottom:22px}
+.pres-card{background:var(--s1);border:1px solid var(--bd);border-radius:11px;padding:17px;transition:all .25s;cursor:pointer;position:relative}
+.pres-card:hover{border-color:var(--bd2);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.pres-ava{width:48px;height:48px;border-radius:50%;background:var(--s2);border:2px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:11px}
+.pres-name{font-weight:700;font-size:.88rem;margin-bottom:2px}
+.pres-party{font-size:.65rem;color:var(--mu);margin-bottom:7px}
+.pres-enc{position:absolute;top:14px;right:14px;font-family:'Bebas Neue',sans-serif;font-size:.9rem;color:var(--cy)}
+.pres-desc{font-size:.71rem;color:var(--mu);line-height:1.6;margin-bottom:9px}
+.pres-tags{display:flex;flex-wrap:wrap;gap:4px}
+.ptag{padding:2px 7px;border-radius:4px;font-size:.59rem;background:var(--s2);color:var(--mu);border:1px solid var(--bd)}
+.pres-alerta{background:rgba(255,68,68,.07);border:1px solid rgba(255,68,68,.2);border-radius:6px;padding:7px 9px;font-size:.69rem;color:var(--re);margin-top:8px;line-height:1.5}
+
+/* EMAIL */
+.email-card{background:var(--s1);border:1px solid var(--bd);border-radius:11px;padding:22px;margin-bottom:22px}
+.email-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:1px;color:var(--cy);margin-bottom:5px}
+.email-card p{font-size:.76rem;color:var(--mu);margin-bottom:15px;line-height:1.6}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px}
+@media(max-width:540px){.fg{grid-template-columns:1fr}}
+.flbl{display:block;font-size:.6rem;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.ck-group{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:13px}
+@media(max-width:480px){.ck-group{grid-template-columns:1fr}}
+.ck-item{display:flex;align-items:center;gap:7px;font-size:.73rem;cursor:pointer;padding:8px 9px;background:var(--s2);border:1px solid var(--bd);border-radius:7px;transition:border-color .2s}
+.ck-item:hover{border-color:var(--cy)}.ck-item input{cursor:pointer;accent-color:var(--cy)}
+.fst{padding:11px 15px;border-radius:8px;font-size:.76rem;margin-top:9px;display:none}
+.fst-ok{background:rgba(63,185,80,.1);border:1px solid rgba(63,185,80,.3);color:var(--gr)}
+.fst-err{background:rgba(255,68,68,.1);border:1px solid rgba(255,68,68,.3);color:var(--re)}
+
+/* AI BAR */
+.ai-bar{background:linear-gradient(135deg,rgba(0,212,255,.07),rgba(210,168,255,.05));border:1px solid rgba(0,212,255,.18);border-radius:11px;padding:15px 18px;display:flex;align-items:center;justify-content:space-between;margin-bottom:15px;flex-wrap:wrap;gap:11px}
+.ai-info h4{font-size:.83rem;font-weight:700;margin-bottom:2px}
+.ai-info p{font-size:.69rem;color:var(--mu)}
+.ai-st{font-size:.66rem;color:var(--mu);margin-top:5px}
+
+/* SECOP */
+.sec-box{background:var(--s1);border:1px solid var(--bd);border-radius:11px;padding:17px;margin-bottom:16px}
+.sec-st{font-size:.68rem;margin-bottom:9px}
+.spin{width:18px;height:18px;border:2px solid var(--bd2);border-top-color:var(--cy);border-radius:50%;animation:rot .7s linear infinite;display:inline-block;vertical-align:middle}
+@keyframes rot{to{transform:rotate(360deg)}}
+.sec-ld{display:none;padding:26px;text-align:center;background:var(--s1);border:1px solid var(--bd);border-radius:11px}
+.sec-ld-msg{color:var(--mu);font-size:.76rem;margin-top:9px}
+.sec-err{display:none;background:rgba(255,68,68,.06);border:1px solid rgba(255,68,68,.2);border-radius:10px;padding:22px;text-align:center}
+.pag{display:flex;gap:8px;justify-content:center;margin-top:13px;align-items:center}
+.pg-i{font-size:.68rem;color:var(--mu);padding:0 7px}
+
+/* TIMELINE */
+.tl{border-left:2px solid var(--bd2);padding-left:0;display:flex;flex-direction:column;margin-bottom:22px}
+.tl-item{position:relative;padding:0 0 20px 30px}
+.tl-item::before{content:'';position:absolute;left:-7px;top:5px;width:10px;height:10px;border-radius:50%;border:2px solid var(--etc,var(--cy));background:var(--bg)}
+.tl-item.done::before{background:var(--etc,var(--cy))}
+.tl-date{font-size:.61rem;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}
+.tl-t{font-weight:700;font-size:.84rem;margin-bottom:2px}
+.tl-d{font-size:.72rem;color:var(--mu);line-height:1.6}
+
+/* MOBILE */
+@media(max-width:600px){
+  .hdr{padding:9px 12px}
+  .brand h1{font-size:1.35rem}
+  .brand sub{display:none}
+  .tb{padding:10px 11px;font-size:.7rem}
+  .sc-val{font-size:1.8rem}
+  .dg{grid-template-columns:1fr}
+  .modal{padding:18px;border-radius:11px}
+  .al{grid-template-columns:28px 1fr auto;gap:9px;padding:11px 12px}
+}
+
+/* FOOTER */
+footer{border-top:1px solid var(--bd);padding:18px 0;margin-top:28px}
+.fi{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:.65rem;color:var(--mu)}
+.fi a{color:var(--cy);text-decoration:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <div class="brand" onclick="goTab('dashboard')">
+      <div class="brand-icon">🔬</div>
+      <div><h1>VigilanCOL</h1><sub>Transparencia · Justicia · Democracia 🇨🇴</sub></div>
+    </div>
+    <div class="hdr-right">
+      <div class="cd-box" onclick="goTab('presidenciales')">
+        <strong id="cd-val">—</strong>
+        🗳️ Congreso 8 Mar &nbsp;·&nbsp; Presidencia 31 May
+      </div>
+      <div class="live-pill"><div class="dot"></div>En vivo</div>
+    </div>
+  </div>
+</header>
+
+<div class="nav-bar">
+  <div class="nav-inner">
+    <button class="tb active"  onclick="goTab('dashboard')">📊 Dashboard</button>
+    <button class="tb" onclick="goTab('candidatos')">🗳️ Congreso 2026</button>
+    <button class="tb" onclick="goTab('presidenciales')">🏛️ Presidenciales</button>
+    <button class="tb" onclick="goTab('mapa')">🗺️ Mapa Corrupción</button>
+    <button class="tb" onclick="goTab('ungrd')">🚨 Caso UNGRD</button>
+    <button class="tb" onclick="goTab('secop')">📋 SECOP II</button>
+    <button class="tb" onclick="goTab('alertas')">🔔 Alertas Email</button>
+    <button class="tb" onclick="goTab('votar')">✅ Cómo Votar</button>
+    <button class="tb" onclick="goTab('denunciar')">📣 Denuncia</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ===== DASHBOARD ===== -->
+<div id="tab-dashboard" class="tc active">
+  <div class="disc"><strong>⚖️ Aviso legal:</strong> Información 100% de fuentes públicas verificadas. Presunción de inocencia aplicable. Objetivo: ejercicio del voto informado conforme Art. 74 Constitución Política de Colombia.</div>
+  <div class="sg">
+    <div class="sc" style="--c:#ff4444"><div class="sc-lbl">Candidatos con líos judiciales</div><div class="sc-val">20+</div><div class="sc-sub">Congreso 2026 · El Colombiano</div></div>
+    <div class="sc" style="--c:#ffc300"><div class="sc-lbl">Caso UNGRD — Daño fiscal</div><div class="sc-val">$10.7B</div><div class="sc-sub">Miles de millones COP · Contraloría</div></div>
+    <div class="sc" style="--c:#00d4ff"><div class="sc-lbl">Presidenciales confirmados</div><div class="sc-val">16+</div><div class="sc-sub">Primera vuelta 31 mayo 2026</div></div>
+    <div class="sc" style="--c:#3fb950"><div class="sc-lbl">Votantes habilitados</div><div class="sc-val">41M</div><div class="sc-sub">Registraduría Nacional</div></div>
+    <div class="sc" style="--c:#f0883e"><div class="sc-lbl">Departamentos en riesgo crítico</div><div class="sc-val">5</div><div class="sc-sub">Bogotá, Córdoba, Bolívar, Magdalena, Chocó</div></div>
+  </div>
+  <div class="sh"><div class="st">Alertas Activas</div><span class="badge b-red">Hoy 6 Mar 2026</span></div>
+  <div class="al-list">
+    <div class="al" style="--ac:#ff4444" onclick="openModal('m-ungrd')">
+      <div class="al-ico">🚨</div>
+      <div><div class="al-t">Caso UNGRD — 7 congresistas a punto de ir a juicio penal</div>
+      <div class="al-b">Corte Suprema delibera ponencia magistrado Misael Rodríguez. Señalados: Juan Pablo Gallo, Julián Peinado, Liliana Bitar, Wadith Manzur, Karen Manrique.</div>
+      <div class="al-m"><span>📅 4 Mar 2026</span><a href="https://www.infobae.com/colombia/2026/03/03/caso-ungrd-seis-congresistas-podrian-ser-llamados-a-juicio-penal-estas-son-las-pruebas-que-analiza-la-corte-suprema-de-justicia/" target="_blank">🔗 Infobae</a><a href="https://www.elcolombiano.com/colombia/congresistas-vinculados-corrupcion-ungrd-EA34072431" target="_blank">🔗 El Colombiano</a></div></div>
+      <span class="badge b-red">CRÍTICO</span>
+    </div>
+    <div class="al" style="--ac:#ffc300" onclick="goTab('candidatos')">
+      <div class="al-ico">🗳️</div>
+      <div><div class="al-t">20+ candidatos con investigaciones activas buscan curul en Congreso</div>
+      <div class="al-b">Observadores Colombia documentó 14 aspirantes al Senado y 6 a Cámara con procesos penales. Haz clic para ver la lista.</div>
+      <div class="al-m"><span>📅 Dic 2025</span><a href="https://www.elcolombiano.com/inicio/20-candidatos-aspiran-curul-congreso-investigaciones-penales-escandalos-OG34012941" target="_blank">🔗 El Colombiano</a></div></div>
+      <span class="badge b-ye">ALTO</span>
+    </div>
+    <div class="al" style="--ac:#f0883e">
+      <div class="al-ico">💀</div>
+      <div><div class="al-t">Precandidato presidencial Miguel Uribe Turbay asesinado (11 ago 2025)</div>
+      <div class="al-b">Hecho que marcó dramáticamente el proceso electoral 2026. Investigado por la Fiscalía General de la Nación.</div>
+      <div class="al-m"><span>📅 11 Ago 2025</span><a href="https://es.wikipedia.org/wiki/Elecciones_presidenciales_de_Colombia_de_2026" target="_blank">🔗 Wikipedia</a></div></div>
+      <span class="badge b-or">GRAVE</span>
+    </div>
+    <div class="al" style="--ac:#d2a8ff">
+      <div class="al-ico">🗺️</div>
+      <div><div class="al-t">3 Consultas Interpartidistas hoy simultáneo al Congreso</div>
+      <div class="al-b">Gran Consulta por Colombia (9 precandidatos) · Frente por la Vida (5) · Consulta de las Soluciones (2). Registraduría confirmó posiciones en tarjetón.</div>
+      <div class="al-m"><a href="https://www.registraduria.gov.co" target="_blank">🔗 Registraduría</a></div></div>
+      <span class="badge b-cy">ELECTORAL</span>
+    </div>
+  </div>
+  <div class="sh"><div class="st">Calendario Electoral 2026</div></div>
+  <div class="tl">
+    <div class="tl-item done" style="--etc:#3fb950"><div class="tl-date">2–8 Marzo 2026</div><div class="tl-t">Voto colombianos en exterior</div><div class="tl-d">En consulados autorizados.</div></div>
+    <div class="tl-item done" style="--etc:#ffc300"><div class="tl-date">8 Marzo 2026 — HOY 🔴</div><div class="tl-t">Elecciones Congreso + 3 Consultas Presidenciales</div><div class="tl-d">103 senadores + 183 representantes. 41M votantes, 13.700 puestos, 125.259 mesas.</div></div>
+    <div class="tl-item" style="--etc:#00d4ff"><div class="tl-date">31 Mayo 2026</div><div class="tl-t">Primera Vuelta Presidencial</div><div class="tl-d">16+ candidatos. Favoritos encuestas: Vicky Dávila (~14%), Sergio Fajardo (~11.8%), Gustavo Bolívar (~8%).</div></div>
+    <div class="tl-item" style="--etc:#ff4444"><div class="tl-date">21 Junio 2026</div><div class="tl-t">Segunda Vuelta (si aplica)</div><div class="tl-d">Entre los dos candidatos más votados si ninguno supera 50%+1.</div></div>
+  </div>
+</div>
+
+<!-- ===== CANDIDATOS CONGRESO ===== -->
+<div id="tab-candidatos" class="tc">
+  <div class="disc"><strong>⚖️ Presunción de inocencia:</strong> Casos documentados por Fiscalía, Corte Suprema, Procuraduría y medios verificados. Ninguno implica culpabilidad definitiva.</div>
+  <div class="ai-bar">
+    <div class="ai-info">
+      <h4>🤖 Actualización automática con IA</h4>
+      <p>Claude analiza fuentes recientes y actualiza la lista de candidatos cuestionados</p>
+      <div class="ai-st" id="ai-st">Usando datos base verificados · <span style="color:var(--cy);cursor:pointer" onclick="actualizarIA()">Actualizar con IA →</span></div>
+    </div>
+    <button class="btn btn-p" onclick="actualizarIA()" id="ai-btn">🤖 Actualizar con IA</button>
+  </div>
+  <div class="sh"><div class="st">Candidatos Cuestionados — Congreso 2026</div><span class="badge b-red" id="cnt-c">12 documentados</span></div>
+  <div class="sb">
+    <input type="text" class="inp" id="bq" placeholder="Buscar nombre, partido..." oninput="filtrarC()">
+    <select class="inp" id="bp" onchange="filtrarC()" style="max-width:165px">
+      <option value="">Todos los partidos</option>
+      <option>Conservador</option><option>Pacto Histórico</option><option>Partido de la U</option>
+      <option>Cambio Radical</option><option>Liberal</option><option>MAIS</option><option>ASI</option>
+    </select>
+    <select class="inp" id="br" onchange="filtrarC()" style="max-width:145px">
+      <option value="">Todo riesgo</option>
+      <option value="critico">⚠️ Crítico</option>
+      <option value="alto">🔴 Alto</option>
+      <option value="medio">🟡 Medio</option>
+    </select>
+  </div>
+  <div class="tw"><table class="dt" id="tbl-c"><thead><tr><th>Nombre</th><th>Aspiración</th><th>Partido</th><th>Investigación</th><th>Entidad</th><th>Riesgo</th><th>Fuente</th></tr></thead><tbody id="tb-c"></tbody></table></div>
+</div>
+
+<!-- ===== PRESIDENCIALES ===== -->
+<div id="tab-presidenciales" class="tc">
+  <div class="sh"><div class="st">Candidatos Presidenciales 2026</div><span class="badge b-cy">31 Mayo 2026</span></div>
+  <div class="disc">
+    <strong>📊 Consultas HOY 8 marzo:</strong> <strong style="color:var(--cy)">Gran Consulta por Colombia</strong> (Fajardo, Galán, Dávila, Luna, Lizcano, Gaviria, Cárdenas, Botero, Oviedo) · <strong style="color:var(--cy)">Frente por la Vida</strong> (Bolívar, Barreras, Bernal) · <strong style="color:var(--cy)">Consulta Soluciones</strong> (Caicedo, otro).<br>
+    Fuente: <a href="https://www.registraduria.gov.co/Asi-quedo-establecida-la-posicion-de-las-consultas-y-los-precandidatos.html" target="_blank">Registraduría Nacional</a> · <a href="https://es.wikipedia.org/wiki/Elecciones_presidenciales_de_Colombia_de_2026" target="_blank">Wikipedia elecciones 2026</a>
+  </div>
+  <div class="sb">
+    <input type="text" class="inp" id="bp2" placeholder="Buscar candidato o partido..." oninput="filtrarPres()">
+    <select class="inp" id="bf2" onchange="filtrarPres()" style="max-width:200px">
+      <option value="">Todas las tendencias</option>
+      <option value="derecha">Derecha / Centro-derecha</option>
+      <option value="centro">Centro</option>
+      <option value="izquierda">Izquierda / Progresismo</option>
+    </select>
+  </div>
+  <div class="pres-grid" id="pres-grid"></div>
+</div>
+
+<!-- ===== MAPA ===== -->
+<div id="tab-mapa" class="tc">
+  <div class="sh"><div class="st">Mapa de Corrupción por Departamento</div><span class="badge b-red">Alertas + SECOP II</span></div>
+  <div class="mapa-layout">
+    <div class="mapa-box">
+      <!-- Mapa Colombia simplificado, geográficamente aproximado -->
+      <svg viewBox="0 0 420 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-height:500px">
+        <defs>
+          <style>
+            .dr{fill:rgba(63,185,80,.25);stroke:#21262d;stroke-width:.8}
+            .dm{fill:rgba(255,195,0,.28);stroke:#21262d;stroke-width:.8}
+            .da{fill:rgba(240,136,62,.32);stroke:#21262d;stroke-width:.8}
+            .dc{fill:rgba(255,68,68,.38);stroke:#21262d;stroke-width:.8}
+            .dpto-g text{fill:#c9d1d9;font-size:7px;font-family:Outfit,sans-serif;pointer-events:none;user-select:none}
+            .dpto-g rect,.dpto-g polygon{stroke-width:.8;stroke:#21262d}
+            .dpto-g.sel rect,.dpto-g.sel polygon{stroke:var(--cy,#00d4ff);stroke-width:2}
+          </style>
+        </defs>
+        <!-- LA GUAJIRA -->
+        <g class="dpto-g da" id="g-LA GUAJIRA" onclick="selDepto('LA GUAJIRA')"><rect x="282" y="8" width="72" height="55" rx="3" class="da"/><text x="318" y="39" text-anchor="middle">La Guajira</text></g>
+        <!-- MAGDALENA -->
+        <g class="dpto-g dc" id="g-MAGDALENA" onclick="selDepto('MAGDALENA')"><rect x="200" y="18" width="78" height="58" rx="3" class="dc"/><text x="239" y="50" text-anchor="middle">Magdalena</text></g>
+        <!-- ATLÁNTICO -->
+        <g class="dpto-g da" id="g-ATLÁNTICO" onclick="selDepto('ATLÁNTICO')"><rect x="163" y="20" width="34" height="36" rx="3" class="da"/><text x="180" y="41" text-anchor="middle">Atlántico</text></g>
+        <!-- BOLÍVAR -->
+        <g class="dpto-g dc" id="g-BOLÍVAR" onclick="selDepto('BOLÍVAR')"><rect x="140" y="56" width="68" height="68" rx="3" class="dc"/><text x="174" y="94" text-anchor="middle">Bolívar</text></g>
+        <!-- SUCRE -->
+        <g class="dpto-g da" id="g-SUCRE" onclick="selDepto('SUCRE')"><rect x="120" y="60" width="36" height="44" rx="3" class="da"/><text x="138" y="86" text-anchor="middle">Sucre</text></g>
+        <!-- CÓRDOBA -->
+        <g class="dpto-g dc" id="g-CÓRDOBA" onclick="selDepto('CÓRDOBA')"><rect x="98" y="54" width="56" height="66" rx="3" class="dc"/><text x="126" y="90" text-anchor="middle">Córdoba</text></g>
+        <!-- CESAR -->
+        <g class="dpto-g da" id="g-CESAR" onclick="selDepto('CESAR')"><rect x="218" y="80" width="62" height="62" rx="3" class="da"/><text x="249" y="115" text-anchor="middle">Cesar</text></g>
+        <!-- NORTE DE SANTANDER -->
+        <g class="dpto-g dm" id="g-NORTE DE SANTANDER" onclick="selDepto('NORTE DE SANTANDER')"><rect x="252" y="98" width="72" height="62" rx="3" class="dm"/><text x="288" y="130" text-anchor="middle" style="font-size:6px">N. Santander</text></g>
+        <!-- ANTIOQUIA -->
+        <g class="dpto-g da" id="g-ANTIOQUIA" onclick="selDepto('ANTIOQUIA')"><rect x="95" y="122" width="92" height="86" rx="3" class="da"/><text x="141" y="169" text-anchor="middle">Antioquia</text></g>
+        <!-- SANTANDER -->
+        <g class="dpto-g dm" id="g-SANTANDER" onclick="selDepto('SANTANDER')"><rect x="196" y="128" width="70" height="68" rx="3" class="dm"/><text x="231" y="166" text-anchor="middle">Santander</text></g>
+        <!-- BOYACÁ -->
+        <g class="dpto-g dm" id="g-BOYACÁ" onclick="selDepto('BOYACÁ')"><rect x="222" y="174" width="66" height="62" rx="3" class="dm"/><text x="255" y="208" text-anchor="middle">Boyacá</text></g>
+        <!-- ARAUCA -->
+        <g class="dpto-g da" id="g-ARAUCA" onclick="selDepto('ARAUCA')"><rect x="272" y="128" width="78" height="48" rx="3" class="da"/><text x="311" y="156" text-anchor="middle">Arauca</text></g>
+        <!-- CASANARE -->
+        <g class="dpto-g dm" id="g-CASANARE" onclick="selDepto('CASANARE')"><rect x="270" y="172" width="78" height="55" rx="3" class="dm"/><text x="309" y="203" text-anchor="middle">Casanare</text></g>
+        <!-- CHOCÓ -->
+        <g class="dpto-g da" id="g-CHOCÓ" onclick="selDepto('CHOCÓ')"><rect x="52" y="128" width="56" height="92" rx="3" class="da"/><text x="80" y="178" text-anchor="middle">Chocó</text></g>
+        <!-- CALDAS -->
+        <g class="dpto-g dr" id="g-CALDAS" onclick="selDepto('CALDAS')"><rect x="122" y="214" width="48" height="42" rx="3" class="dr"/><text x="146" y="239" text-anchor="middle">Caldas</text></g>
+        <!-- RISARALDA -->
+        <g class="dpto-g dr" id="g-RISARALDA" onclick="selDepto('RISARALDA')"><rect x="95" y="230" width="42" height="38" rx="3" class="dr"/><text x="116" y="253" text-anchor="middle">Risaralda</text></g>
+        <!-- QUINDÍO -->
+        <g class="dpto-g dr" id="g-QUINDÍO" onclick="selDepto('QUINDÍO')"><rect x="96" y="270" width="34" height="30" rx="3" class="dr"/><text x="113" y="289" text-anchor="middle">Quindío</text></g>
+        <!-- VALLE DEL CAUCA -->
+        <g class="dpto-g da" id="g-VALLE DEL CAUCA" onclick="selDepto('VALLE DEL CAUCA')"><rect x="56" y="232" width="58" height="88" rx="3" class="da"/><text x="85" y="280" text-anchor="middle" style="font-size:6.5px">Valle</text></g>
+        <!-- CUNDINAMARCA -->
+        <g class="dpto-g dm" id="g-CUNDINAMARCA" onclick="selDepto('CUNDINAMARCA')"><rect x="188" y="208" width="68" height="68" rx="3" class="dm"/><text x="222" y="245" text-anchor="middle" style="font-size:6.5px">Cundinamarca</text></g>
+        <!-- BOGOTÁ -->
+        <g class="dpto-g dc" id="g-BOGOTÁ D.C." onclick="selDepto('BOGOTÁ D.C.')"><rect x="212" y="238" width="30" height="26" rx="3" class="dc"/><text x="227" y="255" text-anchor="middle" style="font-size:5.5px">Bogotá</text></g>
+        <!-- TOLIMA -->
+        <g class="dpto-g dm" id="g-TOLIMA" onclick="selDepto('TOLIMA')"><rect x="144" y="248" width="62" height="72" rx="3" class="dm"/><text x="175" y="288" text-anchor="middle">Tolima</text></g>
+        <!-- META -->
+        <g class="dpto-g dm" id="g-META" onclick="selDepto('META')"><rect x="264" y="210" width="82" height="82" rx="3" class="dm"/><text x="305" y="255" text-anchor="middle">Meta</text></g>
+        <!-- VICHADA -->
+        <g class="dpto-g dr" id="g-VICHADA" onclick="selDepto('VICHADA')"><rect x="322" y="208" width="64" height="78" rx="3" class="dr"/><text x="354" y="251" text-anchor="middle">Vichada</text></g>
+        <!-- CAUCA -->
+        <g class="dpto-g da" id="g-CAUCA" onclick="selDepto('CAUCA')"><rect x="94" y="308" width="70" height="68" rx="3" class="da"/><text x="129" y="346" text-anchor="middle">Cauca</text></g>
+        <!-- HUILA -->
+        <g class="dpto-g dm" id="g-HUILA" onclick="selDepto('HUILA')"><rect x="180" y="298" width="64" height="68" rx="3" class="dm"/><text x="212" y="336" text-anchor="middle">Huila</text></g>
+        <!-- CAQUETÁ -->
+        <g class="dpto-g dm" id="g-CAQUETÁ" onclick="selDepto('CAQUETÁ')"><rect x="228" y="298" width="82" height="80" rx="3" class="dm"/><text x="269" y="342" text-anchor="middle">Caquetá</text></g>
+        <!-- GUAINÍA -->
+        <g class="dpto-g dr" id="g-GUAINÍA" onclick="selDepto('GUAINÍA')"><rect x="325" y="292" width="58" height="66" rx="3" class="dr"/><text x="354" y="329" text-anchor="middle">Guainía</text></g>
+        <!-- NARIÑO -->
+        <g class="dpto-g da" id="g-NARIÑO" onclick="selDepto('NARIÑO')"><rect x="74" y="368" width="80" height="62" rx="3" class="da"/><text x="114" y="403" text-anchor="middle">Nariño</text></g>
+        <!-- PUTUMAYO -->
+        <g class="dpto-g dm" id="g-PUTUMAYO" onclick="selDepto('PUTUMAYO')"><rect x="158" y="358" width="72" height="52" rx="3" class="dm"/><text x="194" y="388" text-anchor="middle">Putumayo</text></g>
+        <!-- VAUPÉS -->
+        <g class="dpto-g dr" id="g-VAUPÉS" onclick="selDepto('VAUPÉS')"><rect x="310" y="355" width="58" height="58" rx="3" class="dr"/><text x="339" y="388" text-anchor="middle">Vaupés</text></g>
+        <!-- AMAZONAS -->
+        <g class="dpto-g dr" id="g-AMAZONAS" onclick="selDepto('AMAZONAS')"><rect x="208" y="395" width="106" height="72" rx="3" class="dr"/><text x="261" y="435" text-anchor="middle">Amazonas</text></g>
+        <!-- LA GUAJIRA label correction done above -->
+      </svg>
+      <div class="map-legend">
+        <div class="ml"><div class="ml-dot" style="background:rgba(255,68,68,.5)"></div>Crítico</div>
+        <div class="ml"><div class="ml-dot" style="background:rgba(240,136,62,.5)"></div>Alto</div>
+        <div class="ml"><div class="ml-dot" style="background:rgba(255,195,0,.45)"></div>Medio</div>
+        <div class="ml"><div class="ml-dot" style="background:rgba(63,185,80,.4)"></div>Bajo</div>
+      </div>
+    </div>
+
+    <div class="mapa-panel">
+      <h3 id="mp-title">Selecciona un departamento</h3>
+      <div id="mp-body" style="font-size:.74rem;color:var(--mu);line-height:1.8;margin-bottom:16px">
+        Haz clic en cualquier departamento del mapa para ver alertas SECOP, candidatos investigados y nivel de riesgo.
+      </div>
+      <div style="border-top:1px solid var(--bd);padding-top:13px">
+        <div style="font-size:.6rem;color:var(--mu);text-transform:uppercase;letter-spacing:2px;margin-bottom:9px">🏆 Ranking por alertas</div>
+        <div class="dpto-rank" id="dpto-rank"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CASO UNGRD ===== -->
+<div id="tab-ungrd" class="tc">
+  <div class="sh"><div class="st">Caso UNGRD — El Escándalo Mayor</div><span class="badge b-red">Juicio inminente</span></div>
+  <div class="disc">Fuentes: <a href="https://www.infobae.com/colombia/2026/03/03/caso-ungrd-seis-congresistas-podrian-ser-llamados-a-juicio-penal-estas-son-las-pruebas-que-analiza-la-corte-suprema-de-justicia/" target="_blank">Infobae (4 Mar 2026)</a> · <a href="https://www.elcolombiano.com/colombia/congresistas-vinculados-corrupcion-ungrd-EA34072431" target="_blank">El Colombiano</a> · <a href="https://www.vanguardia.com/politica/2024/12/07/que-viene-en-el-escandalo-de-corrupcion-en-gestion-del-riesgo/" target="_blank">Vanguardia</a> · Fiscalía General</div>
+  <div class="sg">
+    <div class="sc" style="--c:#ff4444"><div class="sc-lbl">Daño fiscal imputado</div><div class="sc-val">$10.7B</div><div class="sc-sub">Contraloría General</div></div>
+    <div class="sc" style="--c:#ffc300"><div class="sc-lbl">Medidas cautelares</div><div class="sc-val">$29B</div><div class="sc-sub">Miles de millones</div></div>
+    <div class="sc" style="--c:#00d4ff"><div class="sc-lbl">Congresistas investigados</div><div class="sc-val">7+</div><div class="sc-sub">Corte Suprema de Justicia</div></div>
+    <div class="sc" style="--c:#f0883e"><div class="sc-lbl">Páginas del expediente</div><div class="sc-val">500</div><div class="sc-sub">Chats + interceptaciones</div></div>
+  </div>
+  <div class="sh"><div class="st">Línea de Tiempo</div></div>
+  <div class="tl">
+    <div class="tl-item done" style="--etc:#ff4444"><div class="tl-date">Ene 2024</div><div class="tl-t">Carrotanques sobrevalorados — escándalo público</div><div class="tl-d">Carrotanques para La Guajira con precios hasta 10x inflados. Olmedo López, director UNGRD, señalado.</div></div>
+    <div class="tl-item done" style="--etc:#ffc300"><div class="tl-date">12 Jun 2024</div><div class="tl-t">López señala a Karen Manrique y Wadith Manzur</div><div class="tl-d">Ante la Fiscal novena: Manrique como enlace Gobierno-Congreso, Manzur del Partido Conservador.</div></div>
+    <div class="tl-item done" style="--etc:#ffc300"><div class="tl-date">15 Jul 2024</div><div class="tl-t">Chats WhatsApp con senadora Martha Peralta</div><div class="tl-d">Cuadro "Inversiones La Guajira" con 12 proyectos por +$558M en expediente.</div></div>
+    <div class="tl-item done" style="--etc:#ff4444"><div class="tl-date">2025</div><div class="tl-t">Procuraduría destituye a López (18 años) y Pinilla (20 años)</div><div class="tl-d">Sneyder Pinilla se convierte en testigo estrella. Contraloría imputa $10.722M.</div></div>
+    <div class="tl-item done" style="--etc:#ff4444"><div class="tl-date">4 Mar 2026</div><div class="tl-t">🔥 Corte Suprema delibera llamado a juicio de 5+ congresistas</div><div class="tl-d">Magistrado Misael Rodríguez presenta ponencia para: <strong>Gallo, Peinado, Bitar, Manzur, Manrique</strong> + excongresista Juan Diego Muñoz.</div></div>
+  </div>
+  <div class="sh"><div class="st">Congresistas Involucrados</div></div>
+  <div class="tw"><table class="dt"><thead><tr><th>Nombre</th><th>Cargo</th><th>Partido</th><th>Señalamiento</th><th>Estado</th><th>Fuente</th></tr></thead><tbody id="tb-ungrd"></tbody></table></div>
+</div>
+
+<!-- ===== SECOP II ===== -->
+<div id="tab-secop" class="tc">
+  <div class="sh"><div class="st">Buscador SECOP II — Datos Reales</div><span class="badge b-cy">datos.gov.co API</span></div>
+  <div class="sec-box">
+    <div style="font-size:.6rem;color:var(--mu);text-transform:uppercase;letter-spacing:2px;margin-bottom:11px">Filtros de búsqueda</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;align-items:end;flex-wrap:wrap">
+      <div><label class="flbl">Entidad / Proveedor / Objeto</label><input type="text" class="inp" id="sq" placeholder="ej: UNGRD, ministerio..." onkeydown="if(event.key==='Enter')buscarS()" style="width:100%;margin:0"></div>
+      <div><label class="flbl">Departamento</label><select class="inp" id="sd" style="width:100%;margin:0"><option value="">Todos</option><option value="BOGOTÁ">Bogotá D.C.</option><option value="ANTIOQUIA">Antioquia</option><option value="CÓRDOBA">Córdoba</option><option value="ATLÁNTICO">Atlántico</option><option value="VALLE DEL CAUCA">Valle del Cauca</option><option value="BOLÍVAR">Bolívar</option><option value="MAGDALENA">Magdalena</option><option value="SUCRE">Sucre</option></select></div>
+      <div><label class="flbl">Tipo de Alerta</label><select class="inp" id="sa" style="width:100%;margin:0"><option value="">Todas</option><option value="fraccion">✂️ Fraccionamiento</option><option value="directa">🔴 Contratación directa</option><option value="unico">⚠️ Proponente único</option><option value="valor">💰 Valor anómalo</option></select></div>
+      <button class="btn btn-p" onclick="buscarS()">🔍 Buscar</button>
+    </div>
+    <div style="display:flex;gap:6px;margin-top:9px;flex-wrap:wrap;align-items:center">
+      <span style="font-size:.61rem;color:var(--mu)">Rápido:</span>
+      <button class="btn" style="font-size:.64rem;padding:4px 9px" onclick="bRap('UNGRD')">🚨 UNGRD</button>
+      <button class="btn" style="font-size:.64rem;padding:4px 9px" onclick="bRap('ministerio')">🏛️ Ministerios</button>
+      <button class="btn" style="font-size:.64rem;padding:4px 9px" onclick="bRap('consultoría')">📋 Consultoría</button>
+      <button class="btn" style="font-size:.64rem;padding:4px 9px" onclick="bRap('obra')">🏗️ Obras</button>
+      <button class="btn btn-r" style="font-size:.64rem;padding:4px 9px;margin-left:auto" onclick="limpiarS()">✕ Limpiar</button>
+    </div>
+  </div>
+  <div id="sec-st" class="sec-st">⚪ Sin consulta activa</div>
+  <div id="sec-ld" class="sec-ld"><div class="spin"></div><div class="sec-ld-msg" id="sec-ld-msg">Consultando...</div></div>
+  <div id="sec-err" class="sec-err">
+    <div style="font-size:1.2rem;margin-bottom:7px">⚠️</div>
+    <div id="sec-em" style="color:var(--re);font-size:.81rem;margin-bottom:5px"></div>
+    <div id="sec-ed" style="color:var(--mu);font-size:.69rem;margin-bottom:12px"></div>
+    <div style="display:flex;gap:8px;justify-content:center">
+      <button class="btn" onclick="buscarS()">🔄 Reintentar</button>
+      <button class="btn" onclick="demoS()">📊 Ver demo</button>
+    </div>
+  </div>
+  <div id="sec-sum" style="display:none;margin-bottom:13px">
+    <div class="sg" style="margin-bottom:9px">
+      <div class="sc" style="--c:var(--cy);padding:11px 13px"><div class="sc-lbl">Contratos</div><div class="sc-val" id="sr-t" style="font-size:1.6rem">0</div></div>
+      <div class="sc" style="--c:var(--re);padding:11px 13px"><div class="sc-lbl">Con Alertas</div><div class="sc-val" id="sr-a" style="font-size:1.6rem;color:var(--re)">0</div></div>
+      <div class="sc" style="--c:var(--ye);padding:11px 13px"><div class="sc-lbl">Valor Total</div><div class="sc-val" id="sr-v" style="font-size:1.3rem">$0</div></div>
+      <div class="sc" style="--c:var(--gr);padding:11px 13px"><div class="sc-lbl">Proveedores</div><div class="sc-val" id="sr-p" style="font-size:1.6rem">0</div></div>
+    </div>
+  </div>
+  <div id="sec-res" style="display:none">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:7px">
+      <div style="font-size:.68rem;color:var(--mu)" id="sec-info"></div>
+      <div style="display:flex;gap:7px">
+        <button class="btn" style="font-size:.64rem;padding:5px 9px" onclick="exportCSV()">⬇️ CSV</button>
+        <select class="inp" id="ssort" onchange="reordenarS()" style="margin:0;font-size:.66rem;padding:5px 8px;width:auto"><option value="fecha">Más recientes</option><option value="valor">Mayor valor</option><option value="alerta">Más alertas</option></select>
+      </div>
+    </div>
+    <div class="tw"><table class="dt"><thead><tr><th>Ref.</th><th>Entidad</th><th>Proveedor</th><th>Objeto</th><th>Valor COP</th><th>Modalidad</th><th>Fecha</th><th>🚨 Alertas</th></tr></thead><tbody id="tb-sec"></tbody></table></div>
+    <div class="pag" id="sec-pag"></div>
+  </div>
+  <div id="sec-empty" style="display:none;background:var(--s1);border:1px solid var(--bd);border-radius:11px;padding:34px;text-align:center;color:var(--mu)">🔍 Sin resultados. Prueba otros términos.</div>
+  <div id="sec-init"><div style="background:var(--s1);border:1px dashed var(--bd);border-radius:11px;padding:34px;text-align:center"><div style="font-size:2rem;margin-bottom:9px">🇨🇴</div><div style="font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:1px;margin-bottom:5px">Conectado a SECOP II — datos.gov.co</div><div style="font-size:.72rem;color:var(--mu);max-width:400px;margin:0 auto">Busca contratos públicos y detecta patrones de corrupción automáticamente.</div></div></div>
+</div>
+
+<!-- ===== ALERTAS EMAIL ===== -->
+<div id="tab-alertas" class="tc">
+  <div class="sh"><div class="st">Alertas Anticorrupción por Email</div><span class="badge b-gr">Gratis</span></div>
+  <div class="email-card">
+    <h3>🔔 Suscríbete a las Alertas</h3>
+    <p>Recibe notificaciones cuando detectemos contratos sospechosos, novedades judiciales o alertas electorales importantes.</p>
+    <div class="fg">
+      <div><label class="flbl">Nombre (opcional)</label><input type="text" class="inp" id="fn" placeholder="Tu nombre" style="width:100%;margin:0"></div>
+      <div><label class="flbl">Email *</label><input type="email" class="inp" id="fe" placeholder="tu@email.com" style="width:100%;margin:0"></div>
+      <div><label class="flbl">Departamento de interés</label><select class="inp" id="fd" style="width:100%;margin:0"><option value="">Todos</option><option>Bogotá D.C.</option><option>Antioquia</option><option>Córdoba</option><option>Valle del Cauca</option><option>Bolívar</option><option>Magdalena</option><option>Sucre</option><option>Atlántico</option><option>Nariño</option></select></div>
+      <div><label class="flbl">Frecuencia</label><select class="inp" id="ff" style="width:100%;margin:0"><option value="inmediata">Inmediata (críticas)</option><option value="diaria">Resumen diario</option><option value="semanal">Resumen semanal</option></select></div>
+    </div>
+    <div style="font-size:.6rem;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:7px">Tipos de alerta:</div>
+    <div class="ck-group">
+      <label class="ck-item"><input type="checkbox" id="ck1" checked> ✂️ Contratos SECOP sospechosos</label>
+      <label class="ck-item"><input type="checkbox" id="ck2" checked> ⚖️ Novedades judiciales</label>
+      <label class="ck-item"><input type="checkbox" id="ck3" checked> 🗳️ Alertas electorales</label>
+      <label class="ck-item"><input type="checkbox" id="ck4"> 💰 Hallazgos Contraloría</label>
+    </div>
+    <button class="btn btn-p" onclick="suscribir()" style="width:100%;padding:12px">🔔 Activar Alertas Gratuitas</button>
+    <div id="fst" class="fst"></div>
+  </div>
+  <div class="disc" style="border-color:rgba(0,212,255,.2);background:rgba(0,212,255,.03)">
+    <strong>🔧 Para administradores:</strong> Para envío real de emails, crea cuenta gratis en <a href="https://resend.com" target="_blank">Resend.com</a> (3.000 emails/mes gratis) → obtén API key → agrégala en Vercel como variable de entorno <code style="color:var(--cy)">RESEND_API_KEY</code> → redespliega.
+  </div>
+  <div class="cg">
+    <div class="ic" style="--c:#ff4444"><h3>✂️ Fraccionamiento SECOP</h3><p>Cuando detectamos que una entidad divide contratos grandes para evadir licitación pública.</p></div>
+    <div class="ic" style="--c:#ffc300"><h3>⚖️ Novedades Judiciales</h3><p>Avances en la Corte Suprema, Fiscalía o Procuraduría en casos de corrupción.</p></div>
+    <div class="ic" style="--c:#00d4ff"><h3>🗳️ Alerta Electoral</h3><p>Candidatos nuevos investigados, irregularidades en financiación, alertas del CNE.</p></div>
+    <div class="ic" style="--c:#3fb950"><h3>💰 Contraloría</h3><p>Nuevas imputaciones de responsabilidad fiscal y medidas cautelares.</p></div>
+  </div>
+</div>
+
+<!-- ===== CÓMO VOTAR ===== -->
+<div id="tab-votar" class="tc">
+  <div class="sh"><div class="st">Guía para Votar Informado — 8 Marzo 2026</div></div>
+  <div class="cg">
+    <div class="ic" style="--c:#00d4ff"><h3>📍 Antes de ir</h3><ul><li>Consulta tu puesto en <a href="https://wapp.registraduria.gov.co" target="_blank">registraduria.gov.co</a></li><li>Lleva tu cédula física o digital</li><li>Vota de 8:00 AM a 4:00 PM</li><li>El voto en blanco es válido</li></ul></div>
+    <div class="ic" style="--c:#ffc300"><h3>🗳️ Tarjetas que recibirás</h3><ul><li><strong>Senado</strong> — Lista o candidato nacional</li><li><strong>Cámara</strong> — Tu departamento</li><li><strong>Consulta presidencial</strong> — Opcional</li><li>Marca UNA sola opción por tarjeta</li></ul></div>
+    <div class="ic" style="--c:#ff4444"><h3>🚫 Tu voto es secreto</h3><p>Nadie puede pedirte foto del tarjetón. Si te ofrecen dinero están cometiendo delito (Art. 390 Ley 599/2000). Denuncia al 122.</p></div>
+    <div class="ic" style="--c:#3fb950"><h3>🔎 Verifica candidatos</h3><ul><li><a href="https://cuentasclaras.registraduria.gov.co" target="_blank">Cuentas Claras</a> — Financiación</li><li><a href="https://www.moe.org.co" target="_blank">MOE Colombia</a> — Observación</li><li><a href="https://www.fiscalia.gov.co" target="_blank">Fiscalía</a> — Antecedentes</li></ul></div>
+    <div class="ic" style="--c:#d2a8ff"><h3>📞 Dónde denunciar hoy</h3><ul><li><strong>Fiscalía:</strong> 122</li><li><strong>Procuraduría:</strong> 01 8000 910 097</li><li><strong>Policía Electoral:</strong> 112</li><li><strong>MOE:</strong> moe.org.co</li></ul></div>
+    <div class="ic" style="--c:#f0883e"><h3>⚠️ Señales de fraude</h3><ul><li>Ofrecen dinero o mercados por tu voto</li><li>Piden fotos del tarjetón marcado</li><li>Transporte organizado con listas</li><li>Presión de líderes en el puesto</li></ul></div>
+  </div>
+</div>
+
+<!-- ===== DENUNCIAR ===== -->
+<div id="tab-denunciar" class="tc">
+  <div class="sh"><div class="st">¿Cómo Denunciar la Corrupción?</div></div>
+  <div class="disc"><strong>🛡️ Protección al denunciante:</strong> La Ley 1778/2016 y Ley 2195/2022 protegen a quienes denuncian. Puedes hacerlo de forma <strong>anónima</strong> ante la mayoría de estas entidades.</div>
+  <div class="cg">
+    <div class="ic" style="--c:#ff4444"><h3>⚖️ Fiscalía General</h3><p>Delitos penales: corrupción, peculado, cohecho.</p><ul><li><strong>Línea:</strong> 122 (gratuita 24h)</li><li><a href="https://www.fiscalia.gov.co" target="_blank">fiscalia.gov.co</a></li></ul></div>
+    <div class="ic" style="--c:#ffc300"><h3>🏛️ Procuraduría</h3><p>Faltas disciplinarias de funcionarios.</p><ul><li><strong>Línea:</strong> 01 8000 910 097</li><li><a href="https://www.procuraduria.gov.co" target="_blank">procuraduria.gov.co</a></li></ul></div>
+    <div class="ic" style="--c:#00d4ff"><h3>💰 Contraloría</h3><p>Mal uso de recursos públicos.</p><ul><li><strong>Línea:</strong> 01 8000 910 685</li><li><a href="https://www.contraloria.gov.co" target="_blank">contraloria.gov.co</a></li></ul></div>
+    <div class="ic" style="--c:#3fb950"><h3>🗳️ CNE — Electoral</h3><p>Compra de votos, financiación ilegal.</p><ul><li><a href="https://www.cne.gov.co" target="_blank">cne.gov.co</a></li><li><a href="https://cuentasclaras.registraduria.gov.co" target="_blank">Cuentas Claras</a></li></ul></div>
+    <div class="ic" style="--c:#d2a8ff"><h3>👁️ MOE</h3><p>Misión de Observación Electoral.</p><ul><li><a href="https://www.moe.org.co" target="_blank">moe.org.co</a></li></ul></div>
+    <div class="ic" style="--c:#f0883e"><h3>📰 Periodismo Verificado</h3><ul><li><a href="https://www.lasillavacia.com" target="_blank">La Silla Vacía</a></li><li><a href="https://www.colombiacheck.com" target="_blank">Colombia Check</a></li><li><a href="https://www.transparenciacolombia.org.co" target="_blank">Transparencia Colombia</a></li></ul></div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<!-- MODAL UNGRD -->
+<div class="mbg" id="m-ungrd">
+  <div class="modal">
+    <button class="mx" onclick="closeModal('m-ungrd')">✕</button>
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:1px;margin-bottom:4px;color:var(--re)">🚨 Caso UNGRD</h2>
+    <div style="font-size:.74rem;color:var(--mu);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--bd)">Corte Suprema delibera ponencia · 4 Marzo 2026</div>
+    <div class="dg">
+      <div class="di"><label>Entidad</label><div class="dv">UNGRD — Unidad Nacional para la Gestión del Riesgo</div></div>
+      <div class="di"><label>Daño fiscal</label><div class="dv">$10.722 millones COP</div></div>
+      <div class="di"><label>Señalados</label><div class="dv" style="color:var(--re)">7+ congresistas</div></div>
+      <div class="di"><label>Estado</label><div class="dv" style="color:var(--re)">Posible llamado a juicio penal</div></div>
+    </div>
+    <div class="src-box"><h4>Fuentes verificadas</h4>
+      <div class="src-item"><div class="src-n">1</div><a href="https://www.infobae.com/colombia/2026/03/03/caso-ungrd-seis-congresistas-podrian-ser-llamados-a-juicio-penal-estas-son-las-pruebas-que-analiza-la-corte-suprema-de-justicia/" target="_blank" style="color:var(--cy)">Infobae — Caso UNGRD: seis congresistas podrían ir a juicio (4 Mar 2026)</a></div>
+      <div class="src-item"><div class="src-n">2</div><a href="https://www.elcolombiano.com/colombia/congresistas-vinculados-corrupcion-ungrd-EA34072431" target="_blank" style="color:var(--cy)">El Colombiano — Congresistas vinculados en caso UNGRD</a></div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:14px">
+      <button class="btn btn-p" onclick="goTab('ungrd');closeModal('m-ungrd')">Ver detalles completos</button>
+      <button class="btn" onclick="closeModal('m-ungrd')">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap"><div class="fi">
+    <div><strong style="color:var(--cy)">VigilanCOL 3.0</strong> — Datos: <a href="https://datos.gov.co" target="_blank">datos.gov.co</a> · <a href="https://www.fiscalia.gov.co" target="_blank">Fiscalía</a> · <a href="https://www.procuraduria.gov.co" target="_blank">Procuraduría</a> · <a href="https://www.registraduria.gov.co" target="_blank">Registraduría</a></div>
+    <div>⚖️ Herramienta informativa. Fuentes públicas verificadas. Presunción de inocencia aplicable.</div>
+  </div></div>
+</footer>
+
+<script>
+// ======= COUNTDOWN =======
+(function(){
+  const T1=new Date('2026-03-08T08:00:00-05:00');
+  const T2=new Date('2026-05-31T08:00:00-05:00');
+  function upd(){
+    const now=new Date(),el=document.getElementById('cd-val');
+    const d1=T1-now;
+    if(d1>0){const d=Math.floor(d1/86400000),h=Math.floor((d1%86400000)/3600000),m=Math.floor((d1%3600000)/60000);el.textContent=d>0?`${d}d ${h}h ${m}m`:`${h}h ${m}m`;}
+    else{const d2=T2-now;if(d2>0){const d=Math.floor(d2/86400000);el.textContent=`Presidenciales en ${d}d`;}else el.textContent='¡Período electoral!';}
+  }
+  upd();setInterval(upd,30000);
+})();
+
+// ======= TABS =======
+const TABS=['dashboard','candidatos','presidenciales','mapa','ungrd','secop','alertas','votar','denunciar'];
+function goTab(n){
+  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tc').forEach(c=>c.classList.remove('active'));
+  const i=TABS.indexOf(n);if(i>=0)document.querySelectorAll('.tb')[i].classList.add('active');
+  const el=document.getElementById('tab-'+n);if(el){el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+}
+
+// ======= MODALS =======
+function openModal(id){document.getElementById(id).classList.add('open');}
+function closeModal(id){document.getElementById(id).classList.remove('open');}
+document.querySelectorAll('.mbg').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('open');}));
+
+// ======= CANDIDATOS DATA =======
+const CDATA=[
+  {nombre:'Wadith Alberto Manzur',aspiracion:'Senado',partido:'Conservador',cargo:'Rep. Cámara',proceso:'Caso UNGRD: contratos a cambio de apoyo legislativo. Chats con funcionarios en expediente 500 págs.',entidad:'Corte Suprema',riesgo:'critico',fuente:'https://www.infobae.com/colombia/2026/03/03/caso-ungrd-seis-congresistas-podrian-ser-llamados-a-juicio-penal-estas-son-las-pruebas-que-analiza-la-corte-suprema-de-justicia/',fl:'Infobae Mar 2026'},
+  {nombre:'Karen Astrith Manrique Olarte',aspiracion:'Cámara',partido:'Pacto Histórico',cargo:'Rep. Cámara (Arauca)',proceso:'Señalada como enlace Gobierno-Congreso en UNGRD. Mencionada por Olmedo López ante Fiscal.',entidad:'Corte Suprema',riesgo:'critico',fuente:'https://www.elcolombiano.com/colombia/congresistas-vinculados-corrupcion-ungrd-EA34072431',fl:'El Colombiano'},
+  {nombre:'Liliana Bitar Castilla',aspiracion:'Congreso',partido:'—',cargo:'Congresista',proceso:'Incluida en ponencia magistrado Rodríguez. Reuniones oct 2023 en "La Giralda" en expediente.',entidad:'Corte Suprema',riesgo:'critico',fuente:'https://www.infobae.com/colombia/2026/03/03/caso-ungrd-seis-congresistas-podrian-ser-llamados-a-juicio-penal-estas-son-las-pruebas-que-analiza-la-corte-suprema-de-justicia/',fl:'Infobae Mar 2026'},
+  {nombre:'Julián Peinado Ramírez',aspiracion:'Congreso',partido:'—',cargo:'Congresista',proceso:'Incluido en ponencia CSJ. Parte del grupo Comisión de Hacienda investigado.',entidad:'Corte Suprema',riesgo:'critico',fuente:'https://www.chicanoticias.com/2025/02/20/expedientes-congresistas/',fl:'Chicanoticias 2025'},
+  {nombre:'Julio Elías Chagüi Flórez',aspiracion:'Senado',partido:'Partido de la U',cargo:'Senador',proceso:'Intermediario esquema UNGRD. Director UNGRD lo llamó "vergüenza para el país".',entidad:'Corte Suprema',riesgo:'alto',fuente:'https://www.infobae.com/colombia/2025/12/10/el-congreso-de-colombia-inscribe-candidatos-investigados-por-corrupcion-manchados-los-partidos-conservador-liberal-de-la-u-asi-y-pacto-historico/',fl:'Infobae Dic 2025'},
+  {nombre:'John Moisés Besaile Fayad',aspiracion:'Senado',partido:'Partido de la U',cargo:'Senador',proceso:'Falsedad ideológica en documento público. Hermano de exsenador condenado Musa Besaile.',entidad:'Fiscalía',riesgo:'alto',fuente:'https://www.infobae.com/colombia/2025/12/10/el-congreso-de-colombia-inscribe-candidatos-investigados-por-corrupcion-manchados-los-partidos-conservador-liberal-de-la-u-asi-y-pacto-historico/',fl:'Infobae Dic 2025'},
+  {nombre:'Wilmer Ramiro Carrillo Mendoza',aspiracion:'Senado',partido:'Partido de la U',cargo:'Senador',proceso:'Presunta solicitud de sobornos en contratación Hospital de Ábrego, Norte de Santander.',entidad:'Fiscalía',riesgo:'alto',fuente:'https://www.infobae.com/colombia/2025/12/10/el-congreso-de-colombia-inscribe-candidatos-investigados-por-corrupcion-manchados-los-partidos-conservador-liberal-de-la-u-asi-y-pacto-historico/',fl:'Infobae Dic 2025'},
+  {nombre:'Martha Peralta',aspiracion:'Senado',partido:'MAIS',cargo:'Senadora',proceso:'Chats WhatsApp con Olmedo López jun 2023. Cuadro "Inversiones La Guajira" +$558M en expediente.',entidad:'Corte Suprema',riesgo:'alto',fuente:'https://www.elcolombiano.com/colombia/congresistas-vinculados-corrupcion-ungrd-EA34072431',fl:'El Colombiano'},
+  {nombre:'Berenice Bedoya',aspiracion:'Senado',partido:'ASI',cargo:'Senadora',proceso:'Vinculada a escándalo UNGRD por testimonios. Inscrita pese a señalamientos.',entidad:'Testimonios',riesgo:'bajo',fuente:'https://www.infobae.com/colombia/2025/12/10/el-congreso-de-colombia-inscribe-candidatos-investigados-por-corrupcion-manchados-los-partidos-conservador-liberal-de-la-u-asi-y-pacto-historico/',fl:'Infobae Dic 2025'},
+  {nombre:'David Racero Mayorga',aspiracion:'Senado',partido:'Pacto Histórico',cargo:'Rep. Cámara',proceso:'Indagado por presunto reparto de cargos con director del SENA. Audio revelado.',entidad:'Fiscalía',riesgo:'medio',fuente:'https://www.elcolombiano.com/inicio/20-candidatos-aspiran-curul-congreso-investigaciones-penales-escandalos-OG34012941',fl:'El Colombiano'},
+  {nombre:'Edwin Gilberto Ballesteros',aspiracion:'Congreso',partido:'Cambio Radical',cargo:'—',proceso:'Documentado en lista candidatos con investigaciones activas — Observadores Colombia.',entidad:'En investigación',riesgo:'medio',fuente:'https://www.elcolombiano.com/inicio/20-candidatos-aspiran-curul-congreso-investigaciones-penales-escandalos-OG34012941',fl:'El Colombiano'},
+  {nombre:'Astrid Sánchez',aspiracion:'Congreso',partido:'Partido de la U',cargo:'—',proceso:'Documentada en lista candidatos con investigaciones activas — Observadores Colombia.',entidad:'En investigación',riesgo:'medio',fuente:'https://www.elcolombiano.com/inicio/20-candidatos-aspiran-curul-congreso-investigaciones-penales-escandalos-OG34012941',fl:'El Colombiano'},
+];
+
+let candidatosAct=[...CDATA];
+
+function renderC(data){
+  const rM={critico:'r-c',alto:'r-a',medio:'r-m',bajo:'r-b'};
+  const rL={critico:'⚠ Crítico',alto:'🔴 Alto',medio:'🟡 Medio',bajo:'🟢 Bajo'};
+  document.getElementById('cnt-c').textContent=`${data.length} documentados`;
+  document.getElementById('tb-c').innerHTML=data.map(c=>`
+    <tr>
+      <td><div class="nm">${c.nombre}</div><div class="pt">${c.cargo}</div></td>
+      <td style="font-size:.72rem">${c.aspiracion}</td>
+      <td><span class="badge b-cy" style="font-size:.6rem">${c.partido}</span></td>
+      <td style="font-size:.7rem;color:var(--mu);max-width:240px;line-height:1.5">${c.proceso}</td>
+      <td style="font-size:.68rem;color:var(--mu)">${c.entidad}</td>
+      <td><span class="risk ${rM[c.riesgo]||'r-b'}">${rL[c.riesgo]||c.riesgo}</span></td>
+      <td><a href="${c.fuente}" target="_blank" class="sl">🔗 ${c.fl}</a></td>
+    </tr>`).join('');
+}
+
+function filtrarC(){
+  const q=document.getElementById('bq').value.toLowerCase();
+  const p=document.getElementById('bp').value;
+  const r=document.getElementById('br').value;
+  renderC(candidatosAct.filter(c=>(!q||JSON.stringify(c).toLowerCase().includes(q))&&(!p||c.partido===p)&&(!r||c.riesgo===r)));
+}
+
+async function actualizarIA(){
+  const btn=document.getElementById('ai-btn');const st=document.getElementById('ai-st');
+  btn.disabled=true;btn.textContent='⏳ Consultando IA...';st.textContent='Analizando fuentes recientes...';
+  try{
+    const r=await fetch('/api/actualizar-candidatos');
+    const d=await r.json();
+    if(d.ok&&d.candidatos?.length>0){
+      candidatosAct=d.candidatos;renderC(candidatosAct);
+      st.innerHTML=`✅ Actualizado ${new Date().toLocaleTimeString('es-CO')} · ${d.candidatos.length} candidatos · por ${d.generadoPor||'IA'}`;
+    }else{st.textContent='⚠️ '+(d.error||'Sin datos. Verifica ANTHROPIC_API_KEY en Vercel → Settings → Environment Variables.');}
+  }catch(e){st.textContent='❌ Error: '+e.message;}
+  btn.disabled=false;btn.textContent='🤖 Actualizar con IA';
+}
+
+// ======= UNGRD TABLE =======
+const UNGRD=[
+  {n:'Wadith Alberto Manzur',c:'Rep. Cámara → cand. Senado',p:'Conservador',s:'Contratos UNGRD a cambio de apoyo legislativo.',e:'critico',et:'⚠ Llamado a juicio',f:'https://www.infobae.com/colombia/2026/03/03/caso-ungrd-seis-congresistas-podrian-ser-llamados-a-juicio-penal-estas-son-las-pruebas-que-analiza-la-corte-suprema-de-justicia/'},
+  {n:'Karen Manrique Olarte',c:'Rep. Cámara — Arauca',p:'Pacto Histórico',s:'Enlace Gobierno-Congreso. Mencionada ante Fiscal jun 2024.',e:'critico',et:'⚠ Llamado a juicio',f:'https://www.elcolombiano.com/colombia/congresistas-vinculados-corrupcion-ungrd-EA34072431'},
+  {n:'Juan Pablo Gallo Maya',c:'Congresista',p:'Partido Verde',s:'Incluido en ponencia magistrado Rodríguez.',e:'critico',et:'⚠ Llamado a juicio',f:'https://www.infobae.com/colombia/2026/03/03/caso-ungrd-seis-congresistas-podrian-ser-llamados-a-juicio-penal-estas-son-las-pruebas-que-analiza-la-corte-suprema-de-justicia/'},
+  {n:'Liliana Bitar Castilla',c:'Congresista',p:'—',s:'Reuniones oct 2023 en "La Giralda" en expediente de 500 págs.',e:'critico',et:'⚠ Llamado a juicio',f:'https://www.infobae.com/colombia/2026/03/03/caso-ungrd-seis-congresistas-podrian-ser-llamados-a-juicio-penal-estas-son-las-pruebas-que-analiza-la-corte-suprema-de-justicia/'},
+  {n:'Julián Peinado Ramírez',c:'Congresista',p:'—',s:'Comisión de Hacienda. Incluido en ponencia CSJ.',e:'critico',et:'⚠ Llamado a juicio',f:'https://www.chicanoticias.com/2025/02/20/expedientes-congresistas/'},
+  {n:'Martha Peralta',c:'Senadora',p:'MAIS',s:'Chats WhatsApp jun 2023. Cuadro inversiones La Guajira +$558M.',e:'alto',et:'🔴 Investigada CSJ',f:'https://www.elcolombiano.com/colombia/congresistas-vinculados-corrupcion-ungrd-EA34072431'},
+  {n:'Julio Chagüi Flórez',c:'Senador',p:'Partido de la U',s:'Intermediario. "Vergüenza para el país" según director UNGRD.',e:'alto',et:'🔴 Investigado CSJ',f:'https://www.infobae.com/colombia/2025/12/10/el-congreso-de-colombia-inscribe-candidatos-investigados-por-corrupcion-manchados-los-partidos-conservador-liberal-de-la-u-asi-y-pacto-historico/'},
+];
+function renderUNGRD(){
+  const rM={critico:'r-c',alto:'r-a'};
+  document.getElementById('tb-ungrd').innerHTML=UNGRD.map(u=>`
+    <tr><td><div class="nm">${u.n}</div></td><td style="font-size:.71rem">${u.c}</td>
+    <td><span class="badge b-cy" style="font-size:.6rem">${u.p}</span></td>
+    <td style="font-size:.7rem;color:var(--mu);max-width:210px;line-height:1.5">${u.s}</td>
+    <td><span class="risk ${rM[u.e]||'r-a'}">${u.et}</span></td>
+    <td><a href="${u.f}" target="_blank" class="sl">🔗 Fuente</a></td></tr>`).join('');
+}
+
+// ======= PRESIDENCIALES =======
+const PRES=[
+  {n:'Vicky Dávila',p:'Independiente / La Fuerza',t:'derecha',e:'👩',enc:'~14%',d:'Periodista y exdirectora de Semana. Lidera encuestas. Crítica del gobierno Petro.',tags:['Periodista','Independiente'],alerta:''},
+  {n:'Sergio Fajardo',p:'Dignidad y Compromiso',t:'centro',e:'👨',enc:'~11.8%',d:'Exalcalde de Medellín y exgobernador de Antioquia. Tercera candidatura presidencial.',tags:['Gran Consulta','Centro'],alerta:''},
+  {n:'Gustavo Bolívar',p:'Pacto Histórico',t:'izquierda',e:'👨',enc:'~8%',d:'Senador y escritor. Candidato del oficialismo. Consulta Frente por la Vida.',tags:['Pacto Histórico','Frente Vida'],alerta:''},
+  {n:'Juan Manuel Galán',p:'Nuevo Liberalismo',t:'centro',e:'👨',enc:'~7%',d:'Hijo de Luis Carlos Galán. Trayectoria en lucha contra el narcotráfico.',tags:['Gran Consulta','Liberal'],alerta:''},
+  {n:'Claudia López',p:'Alianza Verde',t:'centro',e:'👩',enc:'~6%',d:'Exalcaldesa de Bogotá 2020-2023. Primera alcaldesa de la capital.',tags:['Verde','Gran Consulta'],alerta:''},
+  {n:'David Luna',p:'Cambio Radical',t:'centro',e:'👨',enc:'~5%',d:'Exsenador. Renunció al Congreso para lanzar candidatura presidencial.',tags:['Gran Consulta','Cambio Radical'],alerta:''},
+  {n:'Mauricio Lizcano',p:'Gente en Movimiento',t:'centro',e:'👨',enc:'—',d:'Exministro TIC del gobierno Petro (2023-2025). Propone "sentido común sin ideologías".',tags:['Gran Consulta'],alerta:'Fue ministro del gobierno Petro — posibles cuestionamientos por gestión ministerial.'},
+  {n:'Roy Barreras',p:'La Fuerza de la Paz',t:'izquierda',e:'👨',enc:'—',d:'Exsenador y exembajador. Candidato del Frente por la Vida.',tags:['Frente Vida'],alerta:''},
+  {n:'Aníbal Gaviria',p:'Independiente',t:'centro',e:'👨',enc:'—',d:'Exgobernador de Antioquia. Candidatura aceptada por Registraduría en enero 2026.',tags:['Gran Consulta'],alerta:''},
+  {n:'Carlos Caicedo',p:'Fuerza Ciudadana',t:'izquierda',e:'👨',enc:'—',d:'Exgobernador del Magdalena. Candidatura por firmas aceptada enero 2026.',tags:['Consulta Soluciones'],alerta:''},
+  {n:'Abelardo de la Espriella',p:'Por firmas',t:'derecha',e:'👨',enc:'—',d:'Reconocido abogado penalista colombiano. Candidatura por firmas aceptada enero 2026.',tags:['Independiente','Por firmas'],alerta:''},
+  {n:'Juan Carlos Pinzón',p:'Verde Oxígeno',t:'derecha',e:'👨',enc:'—',d:'Exministro de Defensa y exembajador. Avalado por el partido de Ingrid Betancourt.',tags:['Verde Oxígeno'],alerta:''},
+];
+
+function renderPres(data){
+  document.getElementById('pres-grid').innerHTML=data.map(p=>`
+    <div class="pres-card">
+      ${p.enc&&p.enc!=='—'?`<div class="pres-enc">${p.enc}</div>`:''}
+      <div class="pres-ava">${p.e}</div>
+      <div class="pres-name">${p.n}</div>
+      <div class="pres-party">${p.p}</div>
+      <div class="pres-desc">${p.d}</div>
+      <div class="pres-tags">${p.tags.map(t=>`<span class="ptag">${t}</span>`).join('')}</div>
+      ${p.alerta?`<div class="pres-alerta">⚠️ ${p.alerta}</div>`:''}
+    </div>`).join('');
+}
+
+function filtrarPres(){
+  const q=document.getElementById('bp2').value.toLowerCase();
+  const f=document.getElementById('bf2').value;
+  renderPres(PRES.filter(p=>(!q||p.n.toLowerCase().includes(q)||p.p.toLowerCase().includes(q))&&(!f||p.t===f)));
+}
+
+// ======= MAPA =======
+const DMAP={
+  'BOGOTÁ D.C.':{r:'critico',a:47,cs:312,ci:2,d:'Mayor concentración de contratos del país. Múltiples alertas SECOP activas.'},
+  'CÓRDOBA':{r:'critico',a:38,cs:187,ci:3,d:'Chagüi y Besaile vinculados. Histórico de parapolítica. Alto riesgo electoral.'},
+  'BOLÍVAR':{r:'critico',a:34,cs:156,ci:2,d:'Alto índice de contratación directa irregular. Múltiples investigaciones activas.'},
+  'MAGDALENA':{r:'critico',a:31,cs:143,ci:1,d:'Candidatos investigados. Zona histórica de riesgo de captura del Estado.'},
+  'ANTIOQUIA':{r:'alto',a:29,cs:198,ci:1,d:'Alto volumen contractual. Varios contratos en mínima cuantía sospechosos.'},
+  'LA GUAJIRA':{r:'alto',a:26,cs:91,ci:1,d:'Epicentro del escándalo UNGRD (carrotanques). Martha Peralta vinculada a inversiones aquí.'},
+  'VALLE DEL CAUCA':{r:'alto',a:25,cs:134,ci:1,d:'Contratación directa elevada. Monitoreo activo en varios municipios.'},
+  'ATLÁNTICO':{r:'alto',a:22,cs:98,ci:1,d:'Irregularidades contractuales documentadas. Candidatos cuestionados.'},
+  'SUCRE':{r:'alto',a:19,cs:87,ci:1,d:'Fraccionamiento detectado en municipios. Monitoreo SECOP activo.'},
+  'ARAUCA':{r:'alto',a:17,cs:63,ci:1,d:'Karen Manrique (caso UNGRD) representa a Arauca. Zona de conflicto con riesgo electoral.'},
+  'NARIÑO':{r:'alto',a:16,cs:71,ci:0,d:'Irregularidades en contratación en varios municipios fronterizos.'},
+  'CAUCA':{r:'alto',a:14,cs:65,ci:0,d:'Zona compleja. Contratación sin licitación en municipios pequeños.'},
+  'CHOCÓ':{r:'alto',a:13,cs:58,ci:0,d:'Alto índice de contratación directa. Recursos limitados de supervisión.'},
+  'CESAR':{r:'alto',a:12,cs:54,ci:0,d:'Irregularidades contractuales documentadas en algunos municipios.'},
+  'CUNDINAMARCA':{r:'medio',a:18,cs:89,ci:0,d:'Nivel medio. Requiere monitoreo por cercanía a Bogotá.'},
+  'SANTANDER':{r:'medio',a:15,cs:72,ci:0,d:'Nivel medio. Algunos contratos de consultoría sin proceso competitivo.'},
+  'NORTE DE SANTANDER':{r:'medio',a:11,cs:46,ci:1,d:'Carrillo Mendoza (sobornos hospital) vinculado a esta región.'},
+  'BOYACÁ':{r:'medio',a:11,cs:49,ci:0,d:'Nivel medio. Monitoreo regular de contratación.'},
+  'META':{r:'medio',a:8,cs:38,ci:0,d:'Zona con recursos de regalías. Monitoreo activo.'},
+  'HUILA':{r:'medio',a:10,cs:44,ci:0,d:'Nivel medio. Sin alertas críticas activas.'},
+  'TOLIMA':{r:'medio',a:9,cs:41,ci:0,d:'Nivel medio de riesgo contractual.'},
+  'CAQUETÁ':{r:'medio',a:7,cs:31,ci:0,d:'Zona de posconflicto. Monitoreo de recursos de paz activo.'},
+  'PUTUMAYO':{r:'medio',a:6,cs:28,ci:0,d:'Zona fronteriza. Recursos de sustitución de cultivos bajo vigilancia.'},
+  'CASANARE':{r:'medio',a:9,cs:43,ci:0,d:'Departamento petrolero. Monitoreo de regalías activo.'},
+  'CALDAS':{r:'bajo',a:5,cs:19,ci:0,d:'Nivel bajo. Buenas prácticas relativas de contratación.'},
+  'RISARALDA':{r:'bajo',a:4,cs:17,ci:0,d:'Nivel bajo. Sin alertas críticas activas.'},
+  'QUINDÍO':{r:'bajo',a:3,cs:12,ci:0,d:'Nivel bajo. Departamento pequeño con buen control.'},
+  'AMAZONAS':{r:'bajo',a:2,cs:8,ci:0,d:'Zona remota. Monitoreo limitado por acceso.'},
+  'VICHADA':{r:'bajo',a:2,cs:7,ci:0,d:'Zona remota. Contratación menor.'},
+  'GUAINÍA':{r:'bajo',a:1,cs:5,ci:0,d:'Zona remota. Sin alertas activas.'},
+  'VAUPÉS':{r:'bajo',a:1,cs:4,ci:0,d:'Zona remota. Sin alertas activas.'},
+};
+
+const rCol={critico:'var(--re)',alto:'var(--or)',medio:'var(--ye)',bajo:'var(--gr)'};
+const rLbl={critico:'⚠ CRÍTICO',alto:'🔴 ALTO',medio:'🟡 MEDIO',bajo:'🟢 BAJO'};
+const rClass={critico:'r-c',alto:'r-a',medio:'r-m',bajo:'r-b'};
+
+function selDepto(d){
+  document.querySelectorAll('.dpto-g').forEach(g=>g.classList.remove('sel'));
+  const g=document.getElementById('g-'+d);if(g)g.classList.add('sel');
+  const info=DMAP[d]||{r:'bajo',a:0,cs:0,ci:0,d:'Sin datos disponibles.'};
+  document.querySelectorAll('.dr-item').forEach(i=>{i.classList.toggle('active',i.dataset.d===d);});
+  document.getElementById('mp-title').textContent='🗺️ '+d;
+  document.getElementById('mp-body').innerHTML=`
+    <div style="margin-bottom:10px"><span class="risk ${rClass[info.r]}">${rLbl[info.r]}</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:11px">
+      <div style="background:var(--s2);border:1px solid var(--bd);border-radius:7px;padding:9px;text-align:center">
+        <div style="font-size:.58rem;color:var(--mu);margin-bottom:2px;text-transform:uppercase">Alertas</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:${rCol[info.r]}">${info.a}</div>
+      </div>
+      <div style="background:var(--s2);border:1px solid var(--bd);border-radius:7px;padding:9px;text-align:center">
+        <div style="font-size:.58rem;color:var(--mu);margin-bottom:2px;text-transform:uppercase">Ctos. Sosp.</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--ye)">${info.cs}</div>
+      </div>
+      <div style="background:var(--s2);border:1px solid var(--bd);border-radius:7px;padding:9px;text-align:center">
+        <div style="font-size:.58rem;color:var(--mu);margin-bottom:2px;text-transform:uppercase">Cand. Inv.</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:${info.ci>0?'var(--re)':'var(--gr)'}">${info.ci}</div>
+      </div>
+      <div style="background:var(--s2);border:1px solid var(--bd);border-radius:7px;padding:9px;text-align:center">
+        <div style="font-size:.58rem;color:var(--mu);margin-bottom:2px;text-transform:uppercase">Riesgo</div>
+        <div style="font-size:.9rem;font-weight:700;color:${rCol[info.r]}">${info.r.toUpperCase()}</div>
+      </div>
+    </div>
+    <p style="font-size:.72rem;color:var(--mu);line-height:1.7;margin-bottom:11px">${info.d}</p>
+    <button class="btn btn-p" style="width:100%;padding:8px;font-size:.7rem" onclick="document.getElementById('sd').value='${d.replace(/'/g,"\\'")}';goTab('secop');buscarS()">🔍 Ver contratos de ${d} en SECOP II →</button>`;
+}
+
+function renderRanking(){
+  const sorted=Object.entries(DMAP).sort((a,b)=>b[1].a-a[1].a).slice(0,14);
+  document.getElementById('dpto-rank').innerHTML=sorted.map(([n,d])=>`
+    <div class="dr-item" data-d="${n}" onclick="selDepto('${n}')">
+      <span>${n}</span>
+      <div style="display:flex;align-items:center;gap:6px">
+        <span style="font-size:.66rem;color:${rCol[d.r]}">${d.a} alertas</span>
+        <span class="risk ${rClass[d.r]}" style="padding:1px 5px;font-size:.56rem">${d.r.toUpperCase()}</span>
+      </div>
+    </div>`).join('');
+}
+
+// ======= EMAIL =======
+async function suscribir(){
+  const email=document.getElementById('fe').value.trim();
+  const nombre=document.getElementById('fn').value.trim();
+  const depto=document.getElementById('fd').value;
+  const freq=document.getElementById('ff').value;
+  const tipos=['ck1','ck2','ck3','ck4'].filter(id=>document.getElementById(id).checked).map(id=>id);
+  const st=document.getElementById('fst');
+  if(!email||!email.includes('@')){st.textContent='⚠️ Ingresa un email válido.';st.className='fst fst-err';st.style.display='block';return;}
+  st.textContent='⏳ Registrando...';st.className='fst';st.style.display='block';
+  try{
+    const r=await fetch('/api/alertas',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,nombre,departamento:depto,frecuencia:freq,tipos})});
+    const d=await r.json();
+    st.textContent=d.ok?'✅ '+d.message:'❌ '+(d.error||'Error al registrar');
+    st.className='fst '+(d.ok?'fst-ok':'fst-err');
+    if(d.ok){document.getElementById('fe').value='';document.getElementById('fn').value='';}
+  }catch(e){st.textContent='❌ Error de conexión: '+e.message;st.className='fst fst-err';}
+  st.style.display='block';
+}
+
+// ======= SECOP II =======
+let sData=[],sOff=0;const SPP=50;
+function sShow(id){['sec-ld','sec-err','sec-res','sec-empty','sec-init','sec-sum'].forEach(i=>{const e=document.getElementById(i);if(e)e.style.display='none';});const e=document.getElementById(id);if(e)e.style.display='block';}
+function setSt(ok,msg){document.getElementById('sec-st').innerHTML=`<span style="color:${ok?'var(--gr)':'var(--re)'}">${ok?'🟢':'🔴'} ${msg}</span>`;}
+
+async function buscarS(offset=0){
+  const q=document.getElementById('sq').value.trim();
+  const dep=document.getElementById('sd').value;
+  const al=document.getElementById('sa').value;
+  const p=new URLSearchParams({limit:SPP,offset});
+  if(q)p.set('q',q);if(dep)p.set('depto',dep);
+  sShow('sec-ld');setSt(false,'Consultando SECOP II...');
+  document.getElementById('sec-ld-msg').textContent=`Buscando "${q||'contratos recientes'}"...`;
+  try{
+    const r=await fetch(`/api/secop?${p}`,{headers:{'Accept':'application/json'},signal:AbortSignal.timeout(15000)});
+    const json=await r.json().catch(()=>({ok:false,error:`HTTP ${r.status}`}));
+    if(!json.ok)throw new Error(json.error||json.detail||'Error del proxy');
+    setSt(true,`✓ SECOP II en vivo · ${new Date().toLocaleTimeString('es-CO')}`);
+    sData=json.data;sOff=offset;
+    let f=sData;if(al)f=sData.filter(c=>sAl(c).some(a=>a.t===al));
+    renderS(f,offset);
+  }catch(e){
+    setSt(false,'✗ Error');sShow('sec-err');
+    const loc=location.hostname==='localhost'||location.protocol==='file:';
+    document.getElementById('sec-em').textContent=loc?'Abre el sitio en Vercel para usar la API real':e.message;
+    document.getElementById('sec-ed').textContent=loc?'El proxy /api/secop solo funciona desplegado en Vercel.':'Verifica conexión o usa los datos de demostración.';
+  }
+}
+
+function sAl(c){
+  const r=[];const v=parseFloat(c.valor_del_contrato||0);const m=(c.modalidad_de_contratacion||'').toLowerCase();const d=(c.descripcion_del_proceso||'').toLowerCase();
+  if(v>=40e6&&v<=50e6)r.push({t:'fraccion',l:'✂️ Fraccionamiento',c:'#ff4444'});
+  if((m.includes('directa'))&&v>500e6)r.push({t:'directa',l:'🔴 Directa >$500M',c:'#ff4444'});
+  if(c.numero_de_oferentes==1)r.push({t:'unico',l:'⚠️ Proponente único',c:'#f0883e'});
+  if(v>5e9)r.push({t:'valor',l:'💰 Valor >$5.000M',c:'#ffc300'});
+  if(d.includes('consultor')&&v>1e9&&!m.includes('licitaci'))r.push({t:'unico',l:'📋 Consultoría sin lic.',c:'#f0883e'});
+  return r;
+}
+
+function fCOP(v){const n=parseFloat(v||0);if(n>=1e9)return`$${(n/1e9).toFixed(2)}B`;if(n>=1e6)return`$${(n/1e6).toFixed(1)}M`;return`$${n.toLocaleString('es-CO')}`;}
+function fF(f){try{return new Date(f).toLocaleDateString('es-CO',{year:'2-digit',month:'short',day:'numeric'});}catch{return f?f.slice(0,10):'—';}}
+function tr(s,n=45){return s?(s.length>n?s.slice(0,n)+'…':s):'—';}
+
+function renderS(data,offset=0){
+  if(!data?.length){sShow('sec-empty');return;}
+  const ca=data.filter(c=>sAl(c).length>0).length;
+  const vt=data.reduce((s,c)=>s+parseFloat(c.valor_del_contrato||0),0);
+  const pr=new Set(data.map(c=>c.proveedor_adjudicado||c.nit_del_proveedor)).size;
+  document.getElementById('sr-t').textContent=data.length+(data.length===SPP?'+':'');
+  document.getElementById('sr-a').textContent=ca;
+  document.getElementById('sr-v').textContent=fCOP(vt);
+  document.getElementById('sr-p').textContent=pr;
+  document.getElementById('sec-sum').style.display='block';
+  document.getElementById('sec-info').textContent=`${data.length} contratos · ${ca} con alertas · Registros ${offset+1}–${offset+data.length}`;
+  document.getElementById('tb-sec').innerHTML=data.map(c=>{
+    const al=sAl(c);const v=parseFloat(c.valor_del_contrato||0);
+    const vc=v>1e9?'var(--re)':v>5e8?'var(--or)':'var(--tx)';
+    const alH=al.length?al.map(a=>`<span style="display:inline-block;margin:2px;padding:2px 5px;border-radius:4px;font-size:.58rem;background:${a.c}22;color:${a.c};border:1px solid ${a.c}44">${a.l}</span>`).join(''):`<span style="color:var(--gr);font-size:.66rem">✓ OK</span>`;
+    return`<tr style="${al.some(a=>a.t==='fraccion'||a.t==='directa')?'background:rgba(255,68,68,.03)':''}">
+      <td style="font-size:.64rem;color:var(--cy)">${c.referencia_del_contrato||c.id_contrato||'—'}</td>
+      <td style="font-size:.68rem">${tr(c.nombre_entidad||'—',30)}</td>
+      <td style="font-size:.68rem">${tr(c.proveedor_adjudicado||'—',24)}<div style="font-size:.58rem;color:var(--mu)">${c.nit_del_proveedor||''}</div></td>
+      <td style="font-size:.66rem;color:var(--mu)">${tr(c.descripcion_del_proceso||'—',50)}</td>
+      <td style="font-weight:600;color:${vc}">${fCOP(v)}</td>
+      <td style="font-size:.64rem;color:var(--mu)">${tr(c.modalidad_de_contratacion||'—',18)}</td>
+      <td style="font-size:.66rem">${fF(c.fecha_de_firma)}</td>
+      <td>${alH}</td></tr>`;
+  }).join('');
+  const pg=document.getElementById('sec-pag');pg.innerHTML='';
+  if(offset>0){const b=document.createElement('button');b.className='btn';b.textContent='← Anterior';b.onclick=()=>buscarS(offset-SPP);pg.appendChild(b);}
+  const inf=document.createElement('span');inf.className='pg-i';inf.textContent=`Pág ${Math.floor(offset/SPP)+1}`;pg.appendChild(inf);
+  if(data.length===SPP){const b=document.createElement('button');b.className='btn';b.textContent='Siguiente →';b.onclick=()=>buscarS(offset+SPP);pg.appendChild(b);}
+  sShow('sec-res');
+}
+
+function reordenarS(){
+  const s=document.getElementById('ssort').value;
+  const d=[...sData].sort((a,b)=>s==='valor'?parseFloat(b.valor_del_contrato||0)-parseFloat(a.valor_del_contrato||0):s==='alerta'?sAl(b).length-sAl(a).length:new Date(b.fecha_de_firma||0)-new Date(a.fecha_de_firma||0));
+  renderS(d,sOff);
+}
+
+function bRap(t){document.getElementById('sq').value=t;buscarS();}
+function limpiarS(){['sq','sd','sa'].forEach(id=>document.getElementById(id).value='');sData=[];sShow('sec-init');document.getElementById('sec-sum').style.display='none';setSt(false,'Sin consulta activa');}
+
+function exportCSV(){
+  if(!sData.length)return;
+  const cols=['referencia_del_contrato','nombre_entidad','proveedor_adjudicado','nit_del_proveedor','descripcion_del_proceso','valor_del_contrato','modalidad_de_contratacion','fecha_de_firma'];
+  const csv=[cols.join(','),...sData.map(c=>cols.map(k=>`"${(c[k]||'').toString().replace(/"/g,"'")}"`).join(','))].join('\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'}));a.download=`secop_${Date.now()}.csv`;a.click();
+}
+
+function demoS(){
+  const D=[
+    {referencia_del_contrato:'UNGRD-2024-001',nombre_entidad:'UNGRD — UNIDAD GESTIÓN DEL RIESGO',proveedor_adjudicado:'CARROTANQUES DEL CARIBE SAS',nit_del_proveedor:'800123456',descripcion_del_proceso:'Suministro carrotanques emergencia hídrica La Guajira',valor_del_contrato:'4500000000',modalidad_de_contratacion:'Contratación Directa',fecha_de_firma:'2024-01-15',numero_de_oferentes:'1'},
+    {referencia_del_contrato:'BOG-PCCNTR-2024-8821',nombre_entidad:'ALCALDÍA MAYOR DE BOGOTÁ D.C.',proveedor_adjudicado:'PAPELERÍA EXPRESS S.A.S.',nit_del_proveedor:'900234567',descripcion_del_proceso:'Suministro materiales de papelería y útiles de oficina secretaría',valor_del_contrato:'49800000',modalidad_de_contratacion:'Mínima cuantía',fecha_de_firma:'2024-02-14',numero_de_oferentes:'1'},
+    {referencia_del_contrato:'GOB-COR-2024-1234',nombre_entidad:'GOBERNACIÓN DE CÓRDOBA',proveedor_adjudicado:'INVERSIONES RÁPIDAS S.A.S.',nit_del_proveedor:'800123456',descripcion_del_proceso:'Consultoría estructuración proyectos inversión territorial',valor_del_contrato:'890000000',modalidad_de_contratacion:'Contratación Directa',fecha_de_firma:'2024-01-20',numero_de_oferentes:'1'},
+    {referencia_del_contrato:'BOG-SEC-2024-4421',nombre_entidad:'ALCALDÍA BOGOTÁ — SEC. EDUCACIÓN',proveedor_adjudicado:'PAPELERÍA EXPRESS S.A.S.',nit_del_proveedor:'900234567',descripcion_del_proceso:'Suministro papelería colegios distritales zona norte Bogotá',valor_del_contrato:'49500000',modalidad_de_contratacion:'Mínima cuantía',fecha_de_firma:'2024-02-05',numero_de_oferentes:'1'},
+    {referencia_del_contrato:'DNP-2024-6677',nombre_entidad:'DEPARTAMENTO NACIONAL DE PLANEACIÓN',proveedor_adjudicado:'ESTRATEGIA & GESTIÓN S.A.S.',nit_del_proveedor:'901234567',descripcion_del_proceso:'Estructuración plan nacional de desarrollo territorial municipios',valor_del_contrato:'6800000000',modalidad_de_contratacion:'Licitación Pública',fecha_de_firma:'2024-01-30',numero_de_oferentes:'4'},
+    {referencia_del_contrato:'MIN-INT-2024-01',nombre_entidad:'MINISTERIO DEL INTERIOR',proveedor_adjudicado:'CONSULTORÍA ESTRATÉGICA SAS',nit_del_proveedor:'901234567',descripcion_del_proceso:'Consultoría gestión relacionamiento con el Congreso de la República',valor_del_contrato:'1200000000',modalidad_de_contratacion:'Contratación Directa',fecha_de_firma:'2024-03-01',numero_de_oferentes:'1'},
+  ];
+  sData=D;renderS(D,0);setSt(false,'⚠️ Datos demo · Sube a Vercel para datos reales');
+}
+
+// ======= INIT =======
+window.addEventListener('load',()=>{
+  renderC(candidatosAct);
+  renderUNGRD();
+  renderPres(PRES);
+  renderRanking();
+});
+</script>
+</body>
+</html>
