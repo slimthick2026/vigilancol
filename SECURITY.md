@@ -6,7 +6,7 @@ Si descubres una vulnerabilidad de seguridad en VigilanCOL, **no la publiques en
 
 Reporta de forma privada:
 1. Abre un **Security Advisory** en GitHub: `Security → Advisories → Report a vulnerability`
-2. O envía un email a: `slimthick062026@outlook` (si está configurado)
+2. O envía un email a: `slimthick062026@outlook.com` (si está configurado)
 
 Responderemos en menos de 72 horas.
 
