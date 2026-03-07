@@ -11,6 +11,10 @@
 
 [🌐 Demo en vivo](https://vigilancol.vercel.app) · [📋 Reportar bug](https://github.com/TU_USUARIO/vigilancol/issues) · [💡 Sugerir mejora](https://github.com/TU_USUARIO/vigilancol/issues/new?template=feature_request.md) · [📖 Documentación](https://github.com/TU_USUARIO/vigilancol/wiki)
 
+<br>
+
+[![Donar con PayPal](https://img.shields.io/badge/💙_Apoya_el_proyecto-PayPal-003087?style=for-the-badge&logo=paypal)](https://paypal.me/slimthick062026)
+
 </div>
 
 ---
@@ -417,5 +421,9 @@ libremente, siempre que se mantenga este aviso de copyright.
 *"La corrupción prospera en el silencio. VigilanCOL es el ruido."*
 
 [⭐ Dale una estrella en GitHub](https://github.com/TU_USUARIO/vigilancol) para que más colombianos lo encuentren
+
+[![Donar con PayPal](https://img.shields.io/badge/💙_Donar_con_PayPal-003087?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/slimthick062026)
+
+*Cada donación ayuda a mantener el servidor y seguir actualizando los datos* 🙏
 
 </div>
